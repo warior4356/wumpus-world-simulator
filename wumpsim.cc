@@ -33,6 +33,8 @@ int main (int argc, char *argv[])
 #ifdef PYTHON
 	PyObject *pName, *pModule;
 	Py_Initialize();
+	PyRun_SimpleString("import sys"); // I added this
+	PyRun_SimpleString("sys.path.append(\".\")"); // I added this
 	#if PY_MAJOR_VERSION >= 3
 		pName = PyUnicode_FromString("PyAgent");
 	#else
