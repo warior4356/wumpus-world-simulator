@@ -229,7 +229,6 @@ class Agent:
                     if len(safe_unvisited):
                         if debug:
                             print("Safe Unvisited Locations = " + str(safe_unvisited))
-                        # self.current_goal = random.choice(safe_unvisited)
                         self.current_goal = find_closest_target([self.location_x, self.location_y], safe_unvisited)
                         self.actionList = self.searchEngine.FindPath([self.location_x, self.location_y],
                                                                      self.facing,
@@ -242,7 +241,6 @@ class Agent:
                         if len(questionable_unvisited):
                             if debug:
                                 print("Questionable Unvisited Locations = " + str(questionable_unvisited))
-                            # self.current_goal = random.choice(questionable_unvisited)
                             self.current_goal = find_closest_target([self.location_x, self.location_y],
                                                                     questionable_unvisited)
                             self.searchEngine.AddSafeLocation(self.current_goal[0], self.current_goal[1])
